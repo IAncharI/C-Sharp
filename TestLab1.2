@@ -1,25 +1,21 @@
-using System;
-namespace ex_1
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+namespace TestProjectLab1_2
 {
-    public class Program
+    [TestClass]
+    public class UnitTest1
     {
-        static public int Example(int a, int b)
+        private const int V = 347;
+        [TestMethod]
+        public void Example()
         {
-            int c = a + b;
-            Console.WriteLine(a.ToString() + " + " + b.ToString() + " = " + c.ToString());
-            return c;
+            int result = Lab1_2.Program.Example(V);
+            Assert.AreEqual(3, result);
         }
-        static void Main(string[] args)
+        [TestMethod]
+        public void Lastnumber()
         {
-            Console.WriteLine("Введiть перше число");
-            string S1 = Console.ReadLine();
-            int a = int.Parse(S1);
-            Console.WriteLine("Введiть друге число");
-            string S2 = Console.ReadLine();
-            int b = int.Parse(S2);
-            Example(a, b);
-            Console.ReadLine();
-
+            int result = Lab1_2.Program.Lastnumber(V);
+            Assert.AreEqual(7, result);
         }
     }
 }
